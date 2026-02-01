@@ -136,7 +136,7 @@ Rules applied:
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 All API endpoints were tested using **Thunder Client (VS Code extension)**.
 
@@ -171,9 +171,14 @@ http://localhost:3000
 
 ## Assignment Requirements Coverage
 
-✔ Multi-object CRUD operations
-✔ Two related entities (Room & Booking)
-✔ Authentication system with JWT
-✔ Password hashing (bcrypt)
-✔ Role-Based Access Control (RBAC)
-✔ MVC project structure
+Multi-object CRUD operations
+
+Two related entities (Room & Booking)
+
+Authentication system with JWT
+
+Password hashing (bcrypt)
+
+Role-Based Access Control (RBAC)
+
+MVC project structure
