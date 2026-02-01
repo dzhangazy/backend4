@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Room Booking</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Room Booking</div>
+      <div class="status" id="status">offline</div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Auth</h2>
+
+        <div class="row">
+          <input id="email" type="email" placeholder="email" />
+          <div class="pw">
+            <input id="password" type="password" placeholder="password" />
+            <button class="eye" id="togglePw" type="button">👁</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <select id="role">
+            <option value="user">user</option>
+            <option value="admin">admin</option>
+          </select>
+
+          <button class="btn" id="btnRegister">Register</button>
+          <button class="btn primary" id="btnLogin">Login</button>
+        </div>
+
+        <div class="token">
+          <div class="muted">Token:</div>
+          <code id="tokenBox">—</code>
+        </div>
+
+        <div class="row">
+          <button class="btn danger" id="btnLogout">Logout</button>
+        </div>
+
+        <p class="hint">
+          GET публичные. Rooms POST/PUT/DELETE — только admin. Booking POST —
+          user/admin (через Bearer token).
+        </p>
+
+        <pre id="adminResult" class="console"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Rooms (public GET)</h2>
+        <div class="row">
+          <button class="btn" id="btnLoadRooms">Load rooms</button>
+        </div>
+        <div id="roomsList" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Admin: Create Room</h2>
+        <p class="hint">Сработает только если залогинен admin.</p>
+
+        <div class="row">
+          <input id="roomName" placeholder="name (Room A)" />
+          <input id="roomCapacity" type="number" placeholder="capacity (10)" />
+        </div>
+
+        <div class="row">
+          <input
+            id="roomPrice"
+            type="number"
+            placeholder="pricePerHour (5000)"
+          />
+          <input id="roomType" placeholder="roomType (conference)" />
+        </div>
+
+        <div class="row">
+          <input id="roomAmenities" placeholder="amenities: wifi, projector" />
+        </div>
+
+        <div class="row">
+          <button class="btn primary" id="btnCreateRoom">Create</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>User: Book a Room</h2>
+        <p class="hint">
+          Залогинься как user/admin. Нажми на room в списке — roomId сам
+          вставится.
+        </p>
+
+        <div class="row">
+          <input id="bookRoomId" placeholder="roomId (click room to fill)" />
+          <input id="bookName" placeholder="customerName (e.g., John)" />
+        </div>
+
+        <div class="row">
+          <input id="bookStart" type="datetime-local" />
+          <input id="bookEnd" type="datetime-local" />
+        </div>
+
+        <div class="row">
+          <button class="btn primary" id="btnCreateBooking">Book</button>
+          <button class="btn" id="btnLoadBookings">Load bookings</button>
+        </div>
+
+        <div id="bookingsList" class="list"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
