@@ -32,8 +32,12 @@ server4/
 │ └── requireAdmin.js
 │
 ├── public/
+│ ├── index.html
+│ ├── app.js
+│ └── styles.css
 │
 ├── .env
+├── .gitignore
 ├── server.js
 └── README.md
 
