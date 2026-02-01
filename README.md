@@ -40,7 +40,7 @@ server4/
 
 ```
 
-## 🗄️ Database Models
+## Database Models
 
 ### User (Authentication)
 
